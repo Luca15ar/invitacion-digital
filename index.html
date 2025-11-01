@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?xml version="1.0" encoding="UTF-8"?>
+
+    <!-- Titulo -->
+    <title>XV de Yamila</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/img/crown_icon.ico">
+</head>
+<body>
+    <header>
+        <p class="frase">"Hay momentos inolvidables que se atesoran en el corazón para siempre, 
+            por esa razón, quiero que compartas conmigo este día tan especial."
+        </p>
+
+        <img class="queen-crown" src="./assets/img/queen-crown.png">
+        <h1>MIS XV AÑOS</h1>
+
+        <h2>Yamila Areco Gonzalez</h2>
+
+        <div class="calendario-container">
+            <p class="mes">DICIEMBRE</p>
+            
+            <div class="fecha-container">
+                <p class="dia">SÁBADO</p>
+                <p class="fecha">20</p>
+                <p class="año">2025</p>
+            </div>
+        </div>
+
+        <h4 style="margin-top: 21.28px;">21:30 - 05:00</h4>
+    </header>
+
+    <main>
+        <!-- Contador regresivo -->
+        <section id="contador-regresivo">
+            <h3>FALTAN</h3>
+            <i class="fi fi-ts-marker"></i>
+            <table>
+                <tr>
+                <td><span id="days"></span></td>
+                <td><span id="hours"></th>
+                <td><span id="minutes"></span></td>
+                <td><span id="seconds"></span></td>
+                </tr>
+                <tr>
+                <th id="dias">Días</th>
+                <th id="horas">Horas</th>
+                <th id="minutos">Min</th>
+                <th id="segundos">Seg</th>
+                </tr>
+            </table>
+        </section>
+
+        <section id="detalles">
+            <div class="ubicacion-container">
+                <img class="iconos" src="./assets/img/location.png" alt="location-img">
+                <h3>LUGAR</h3>
+                <p class="detalle-lugar">Av. Bartolomé Mitre 1565, Avellaneda</p>
+                <a href="https://maps.app.goo.gl/vFm17dpdf5P41hpA6" target="_blank">
+                    <button id="ubicacion">Ver ubicación</button>
+                </a>
+            </div>
+
+            <div class="vestimenta-container">
+                <h3>CÓDIGO DE VESTIMENTA</h3>
+                <p>Elegante Sport</p>
+                <div class="vestimenta-img">
+                    <img class="vestimenta" src="./assets/img/suit-icon.png" alt="suit-img">
+                    <img class="vestimenta" src="./assets/img/dress-icon.png" alt="dress-img">
+                </div>
+            </div>
+
+            <div class="confirmacion-container">
+                <img class="iconos" src="./assets/img/whatsapp-icon.png" alt="whatsapp-icon">
+                <h3>CONFIRMAR ASISTENCIA</h3>
+                <button id="confirmacion" onclick='window.location.href="https://wa.me/5491134753875"'>Confirmar aquí</button>
+            </div>
+
+            <div class="regalos-container">
+                <img class="iconos" src="./assets/img/gift.png" alt="gift-img">
+                <h3>SUGERENCIA DE REGALOS</h3>
+                <p style="margin-bottom: 2.5%;">Tu compañia en este día tan especial es el mejor regalo. Pero si deseas darme un obsequio, aquí podes hacerlo:</p>
+                <p style="margin-top: 0;">TRANSFERENCIA</p>
+                <h3>yamila.183.comics.mp</h3>
+            </div>
+
+            <div class="agradecimientos">
+                <h5>ESPERAMOS CONTAR CON TU PRESENCIA</h5>
+
+                <h2 style="color: #00674F;">¡Muchas gracias!</h2>
+            </div>
+        </section>
+    </main>
+        
+    <footer>
+        <p style="font-size: smaller;">Made by Luca Areco © 2025</p>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => { 
+
+        //===
+        // VARIABLES Cambia la fecha aquí del evento 
+        //=== Mes - Dia -Año ===//
+
+
+        const DATE_TARGET = new Date('12/20/2025 09:00 PM');
+
+
+        // DOM for render
+        const SPAN_DAYS = document.querySelector('span#days');
+        const SPAN_HOURS = document.querySelector('span#hours');
+        const SPAN_MINUTES = document.querySelector('span#minutes');
+        const SPAN_SECONDS = document.querySelector('span#seconds');
+        // Milliseconds for the calculations
+        const MILLISECONDS_OF_A_SECOND = 1000;
+        const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
+        const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
+        const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24
+
+        //===
+        // FUNCTIONS
+        //===
+
+        /**
+        * Method that updates the countdown and the sample
+        */
+        function updateCountdown() {
+            // Calcs
+            const NOW = new Date()
+            const DURATION = DATE_TARGET - NOW;
+            const REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
+            const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+            const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+            const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+           
+
+            // Render
+            SPAN_DAYS.textContent = REMAINING_DAYS;
+            SPAN_HOURS.textContent = REMAINING_HOURS;
+            SPAN_MINUTES.textContent = REMAINING_MINUTES;
+            SPAN_SECONDS.textContent = REMAINING_SECONDS;
+        }
+
+        //===
+        // INIT
+        //===
+        updateCountdown();
+        // Refresh every second
+        setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
+    });
+    </script>
+</body>
+</html>

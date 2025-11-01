@@ -1,0 +1,251 @@
+/* --- Estilos generales --- */
+@font-face
+{
+    font-family: 'Mrs Saint Delafield';
+    src: url("./assets/fonts/Mrs_Saint_Delafield/MrsSaintDelafield-Regular.ttf");
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'Playfair Display';
+    src: url("./assets/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+    font-style: normal;
+}
+
+*
+{
+    font-family: 'Playfair Display';
+}
+
+body 
+{
+    background-image: url("./assets/img/background.png");
+    background-size: cover;
+    margin: 0;
+}
+
+p
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: large;
+}
+
+h1
+{
+    display: flex;
+    justify-content: center;
+    color: #00674F;
+    font-size: 30px;
+    margin-top: 0;
+}
+
+h2
+{
+    font-family: "Mrs Saint Delafield";
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+    color: #D4AF37;
+}
+
+h3
+{
+    color: #00674F;
+    margin: 2.5%;
+    font-size: larger;
+}
+
+h4
+{
+    margin-top: 0;
+}
+
+h5
+{
+    text-align: center;
+}
+
+/* --- Estilos del encabezado --- */
+header
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.frase
+{
+    margin-top: 30%;
+    margin-bottom: 15%;
+    width: 75%;
+}
+
+.calendario-container
+{
+    width: 50%;
+}
+
+.fecha-container
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.fecha
+{
+    font-family: 'Mrs Saint Delafield';
+    font-size: 35px;
+    font-weight: bold;
+    padding-left: 5%;
+    padding-right: 5%;
+    line-height: 1;
+    margin: 0;
+    color: #00674F;
+}
+
+.dia, .año
+{
+    flex: 1;
+    border-top: solid #00674F 2px;
+    border-bottom: solid #00674F 2px;
+    letter-spacing: 1.5px;
+    margin: 0;
+    padding: 2.5%;
+}
+
+.dia
+{
+    padding-right: 0;
+}
+
+.año
+{
+    padding-left: 0;
+    text-align: right;
+}
+
+.queen-crown
+{
+    width: 30%;
+}
+
+/* --- Estilos del contenedor principal --- */
+#contador-regresivo
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+td 
+{
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 0px;
+    color: #00674F;  /* Cambia Color Aqui */
+    padding: 0px;
+    font-size: 39px;
+    font-family: 'Mrs Saint Delafield';
+    text-align: center;
+}
+
+#detalles
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.detalle-lugar
+{
+    color: black;
+}
+
+#seconds
+{
+    color: #32d4ae;
+}
+
+th 
+{
+    border-width: 0px;
+    text-align: center;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 17px;
+    font-family: 'Mrs Saint Delafield';
+}
+
+.iconos
+{
+    width: 12.5%;
+}
+
+.ubicacion-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.vestimenta-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.vestimenta-img
+{
+    display: flex;
+    justify-content: center;
+}
+
+.vestimenta
+{
+    width: 20%;
+}
+
+.confirmacion-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.regalos-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 75%;
+}
+
+/* Botones */
+#ubicacion, #confirmacion
+{
+    background-color: #00674F;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
